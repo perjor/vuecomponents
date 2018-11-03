@@ -37,7 +37,7 @@
                     </thead>
 
                     <tbody>
-                        <tr v-for="client in clients">
+                        <tr v-for="(client, i) in clients" :key="`client${i}`">
                             <!-- ID -->
                             <td style="vertical-align: middle;">
                                 {{ client.id }}
@@ -90,7 +90,7 @@
                             <p class="mb-0"><strong>Whoops!</strong> Something went wrong!</p>
                             <br>
                             <ul>
-                                <li v-for="error in createForm.errors">
+                                <li v-for="(error, i) in createForm.errors" :key="`createformerror${i}`">
                                     {{ error }}
                                 </li>
                             </ul>
@@ -158,7 +158,7 @@
                             <p class="mb-0"><strong>Whoops!</strong> Something went wrong!</p>
                             <br>
                             <ul>
-                                <li v-for="error in editForm.errors">
+                                <li v-for="(error, i) in editForm.errors" :key="`formerror${i}`">
                                     {{ error }}
                                 </li>
                             </ul>
@@ -212,6 +212,7 @@
 
 <script>
     export default {
+        name: 'Clients',
         /*
          * The component's data.
          */

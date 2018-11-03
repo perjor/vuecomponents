@@ -22,7 +22,7 @@
                         </thead>
 
                         <tbody>
-                            <tr v-for="token in tokens">
+                            <tr v-for="(token, i) in tokens" :key="`token${i}`">
                                 <!-- Client Name -->
                                 <td style="vertical-align: middle;">
                                     {{ token.client.name }}
